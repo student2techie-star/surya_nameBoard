@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;700;900&display=swap');
 
 /* ==========================================================================
-   REALISTIC WOOD SLAB NEON SPLASH SCREEN
+   PREMIUM GLASSMORPHISM & NEON SPLASH SCREEN
    ========================================================================== */
 .intro-splash-overlay {
   position: fixed;
@@ -9,13 +9,14 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  /* Dark blurred background to make the neon pop */
-  background: radial-gradient(circle at center, #2d1b11 0%, #000000 100%);
+  /* Deep, elegant dark background */
+  background: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 80%);
   z-index: 99999;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
 .intro-splash-overlay.fade-out {
@@ -23,144 +24,142 @@
   pointer-events: none;
 }
 
-/* Highly realistic vivid wood slab (like the uploaded image) */
-.rustic-wood-plate {
-  position: relative;
-  width: 350px;
-  max-width: 90vw;
-  height: 180px;
-  /* Rich teak/orange wood grain gradient */
-  background: 
-    linear-gradient(rgba(200, 80, 20, 0.4), rgba(120, 40, 10, 0.6)),
-    repeating-linear-gradient(
-      15deg,
-      #c45012 0%,
-      #a03808 5%,
-      #d96619 10%,
-      #8c2e04 15%,
-      #c45012 20%
-    );
-  background-size: 100% 100%, 200px 100%;
-  /* Organic wavy non-structured shape */
-  border-radius: 42% 58% 38% 62% / 54% 45% 55% 46%;
-  box-shadow: 
-    20px 20px 40px rgba(0,0,0,0.8),
-    inset 0 0 40px rgba(0,0,0,0.6),
-    inset 10px 10px 20px rgba(255,255,255,0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* Wood ring distortion effect */
-  filter: contrast(1.1) saturate(1.2);
-}
-
-/* Subtle wood texture noise */
-.rustic-wood-plate::before {
+/* Subtle background particle dust (Optional premium feel) */
+.intro-splash-overlay::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: inherit;
-  background-image: radial-gradient(#000 1px, transparent 1px);
-  background-size: 4px 4px;
-  opacity: 0.1;
-  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  animation: floatBackground 20s linear infinite;
 }
 
-/* Content Container */
-.wood-content {
+@keyframes floatBackground {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+}
+
+/* The Premium Frosted Glass Sign Board */
+.premium-glass-board {
   position: relative;
-  z-index: 5;
-  text-align: center;
+  z-index: 10;
+  width: 400px;
+  max-width: 90vw;
+  padding: 50px 30px;
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-/* Cursive 3D Text for "SURYA" (matches 'Yashna' from image) */
-.golden-cursive-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #fef08a; /* Pale yellow */
-  line-height: 0.8;
-  /* Hard shadow to simulate raised 3D acrylic letters */
-  text-shadow: 
-    1px 1px 0px #b45309,
-    2px 2px 0px #92400e,
-    3px 3px 0px #78350f,
-    6px 6px 15px rgba(0,0,0,0.9);
-  
-  /* Fast engraving wipe animation */
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation: engraveFast 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  margin-bottom: 5px; 
-}
-
-@keyframes engraveFast {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-}
-
-/* Neon Cursive Light coming last */
-.neon-cursive-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  color: #fff;
-  /* Neon pink matching the lotus in the image */
-  text-shadow: 
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #ff007f,
-    0 0 40px #ff007f,
-    0 0 80px #b30059;
-  /* Starts hidden */
+  /* Entrance Animation */
   opacity: 0;
-  transform: rotate(-3deg) translateX(20px);
-  /* Triggers after the engraving finishes (delay 1s) */
-  animation: neonFlickerOn 1.5s ease-out 1s forwards;
-  position: relative;
-  z-index: 6;
+  transform: translateY(40px) scale(0.95);
+  animation: glassEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes neonFlickerOn {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  15% { opacity: 0.1; }
-  25% { opacity: 1; text-shadow: 0 0 5px #fff, 0 0 10px #ff007f; }
-  35% { opacity: 0.3; }
-  50%, 100% { 
-    opacity: 1; 
-    text-shadow: 
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px #ff007f,
-      0 0 40px #ff007f,
-      0 0 80px #b30059;
+@keyframes glassEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-/* Optional Lotus Graphic to match the vibe */
-.neon-lotus {
-  position: absolute;
-  right: -35px;
-  top: 5px;
-  width: 30px;
-  height: 30px;
-  background: #ff007f;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+/* Container for text to manage layout */
+.premium-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+/* The "SURYA" Text - Sequential Neon Turn-On */
+.neon-surya {
+  font-family: 'Dancing Script', cursive;
+  font-size: 5.5rem;
+  font-weight: 700;
+  color: transparent;
+  letter-spacing: 2px;
+  line-height: 1;
+  /* Stroke outline before it turns on */
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  /* Lights turn on */
+  animation: powerOnNeon 0.5s ease-out 1s forwards;
+}
+
+@keyframes powerOnNeon {
+  to {
+    color: #ffffff;
+    -webkit-text-stroke: 0px transparent;
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(56, 189, 248, 0.6),
+      0 0 40px rgba(56, 189, 248, 0.4),
+      0 0 80px rgba(56, 189, 248, 0.2);
+  }
+}
+
+/* The "DESIGNS" Text - Golden elegant sweep */
+.golden-designs {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fbbf24;
+  letter-spacing: 4px;
+  margin-right: -4px; /* compensate for letter spacing */
   opacity: 0;
-  animation: neonFlickerOn 1.5s ease-out 1.2s forwards;
-  box-shadow: 0 0 20px #ff007f;
+  transform: translateY(10px);
+  /* Appears right after SURYA */
+  animation: sweepUpGolden 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
+}
+
+@keyframes sweepUpGolden {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+  }
+}
+
+/* A sleek light flare that sweeps across the glass */
+.glass-flare {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: flareSweep 2.5s ease-in-out infinite 2s;
+  pointer-events: none;
+}
+
+@keyframes flareSweep {
+  0% { left: -150%; }
+  100% { left: 200%; }
 }
 
 @media (max-width: 768px) {
-  .rustic-wood-plate {
-    width: 90%;
-    height: 150px;
+  .premium-glass-board {
+    width: 85%;
+    padding: 40px 20px;
   }
-  .golden-cursive-text { font-size: 2.5rem; }
-  .neon-cursive-text { font-size: 1.8rem; transform: rotate(-3deg) translateX(0); }
-  .neon-lotus { display: none; }
+  .neon-surya { font-size: 3rem; letter-spacing: 4px; }
+  .golden-designs { font-size: 0.9rem; letter-spacing: 8px; margin-right: -8px; }
 }
