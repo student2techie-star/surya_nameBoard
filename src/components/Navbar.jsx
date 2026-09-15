@@ -178,42 +178,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* HANGING THORAN FESTIVE LIGHT GARLAND UNDER NAVBAR */}
-        <div className="below-navbar-thoran" aria-hidden="true">
-          {/* SVG Draped Catenary Wire Strands */}
-          <svg className="thoran-wire-svg" viewBox="0 0 1200 45" preserveAspectRatio="none">
-            {/* Upper draped strand */}
-            <path d="M 0 4 Q 150 28 300 4 Q 450 30 600 4 Q 750 28 900 4 Q 1050 30 1200 4" fill="none" stroke="rgba(255, 180, 200, 0.45)" strokeWidth="1.5" />
-            {/* Lower draped strand */}
-            <path d="M 0 10 Q 100 42 200 12 Q 300 44 400 12 Q 500 42 600 10 Q 700 44 800 12 Q 900 44 1000 12 Q 1100 40 1200 10" fill="none" stroke="rgba(255, 215, 180, 0.55)" strokeWidth="1.5" strokeDasharray="4 2" />
-          </svg>
-
-          {/* Draped Festoon Light Bulbs hanging along the curves */}
-          <div className="thoran-bulbs-track">
-            {Array.from({ length: 42 }).map((_, i) => {
-              const angle = (i / 41) * Math.PI * 8;
-              const yOffset = Math.sin(angle) * 14 + 18;
-              const delay = ((i * 0.12) % 2.4).toFixed(2);
-              const colorVariant = i % 4;
-
-              return (
-                <div 
-                  key={i} 
-                  className={`thoran-bulb-node variant-${colorVariant}`}
-                  style={{
-                    left: `${(i / 41) * 100}%`,
-                    top: `${yOffset}px`,
-                    animationDelay: `${delay}s`
-                  }}
-                >
-                  <div className="thoran-bulb-cap"></div>
-                  <div className="thoran-bulb-glow"></div>
-                  <div className="thoran-bulb-glass"></div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
       {/* MOBILE FULL-SCREEN GLASS DRAWER */}

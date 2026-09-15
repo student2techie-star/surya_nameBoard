@@ -2775,6 +2775,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
+.mobile-only {
+  display: none;
+}
+
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 1024px) {
   .hero-grid,
@@ -2792,11 +2796,11 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr 1fr;
   }
 
-  .desktop-nav, .desktop-ctas {
+  .desktop-nav, .desktop-ctas, .desktop-only {
     display: none;
   }
 
-  .mobile-hamburger-btn, .mobile-menu-drawer {
+  .mobile-hamburger-btn, .mobile-menu-drawer, .mobile-only {
     display: block;
   }
 
