@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="suryaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="20" fill="#0f172a"/>
+  <!-- Sun motif radiating rays -->
+  <circle cx="50" cy="50" r="22" fill="url(#suryaGrad)"/>
+  <path d="M 50 12 L 50 20 M 50 80 L 50 88 M 12 50 L 20 50 M 80 50 L 88 50 M 23 23 L 29 29 M 71 71 L 77 77 M 23 77 L 29 71 M 71 29 L 77 23" stroke="url(#suryaGrad)" stroke-width="5" stroke-linecap="round"/>
+  <text x="50" y="58" font-family="'Outfit', sans-serif" font-weight="800" font-size="22" fill="#0f172a" text-anchor="middle">S</text>
+</svg>

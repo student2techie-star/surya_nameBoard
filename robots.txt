@@ -1,0 +1,5 @@
+# Robots.txt for Surya Designs Thiruvananthapuram
+User-agent: *
+Allow: /
+
+Sitemap: https://suryadesigns.in/sitemap.xml
