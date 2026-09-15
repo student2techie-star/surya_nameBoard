@@ -40,25 +40,7 @@ export default function Navbar() {
 
   return (
     <header className={`floating-dock-header ${isScrolled ? 'dock-compact' : ''}`}>
-      {/* Top Notification Announcement Strip */}
-      <div className="top-announcement-bar">
-        <div className="container announcement-inner">
-          <span className="announcement-badge">
-            <Sparkles size={12} /> Custom Signage Manufacturer
-          </span>
-          <span className="announcement-text">
-            Narayani Towers, Kaimanam Junction, Thiruvananthapuram, Kerala 695040
-          </span>
-          <div className="announcement-links">
-            <a href="tel:+919847000000" className="announcement-phone">
-              <Phone size={12} /> +91 98470 00000
-            </a>
-            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="announcement-wa">
-              <MessageCircle size={12} /> WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
+
 
       {/* FESTIVE THORAN LIGHT GARLAND NAVBAR */}
       <div className="dock-container thoran-dock-container">
