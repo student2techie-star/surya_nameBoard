@@ -2792,6 +2792,10 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2.5rem;
   }
 
+  .gallery-collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2830,5 +2834,17 @@ h1, h2, h3, h4, h5, h6 {
   .footer-bottom-inner {
     flex-direction: column;
     text-align: center;
+  }
+
+  .gallery-collage-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+
+  .collage-card.span-hero-large,
+  .collage-card.span-tall,
+  .collage-card.span-wide {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 }
