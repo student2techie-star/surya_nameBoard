@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* LEFT: OFFICIAL BRAND LOGO & TITLE CAPSULE */}
           <Link to="/" className="dock-brand-capsule thoran-brand-capsule" title="Suriya Designs Home">
             <img 
-              src="/surya-designs-logo.png" 
+              src={`${import.meta.env.BASE_URL}surya-designs-logo.png`} 
               alt="Suriya Designs Logo" 
               className="brand-logo-img"
               style={{ height: '36px', width: 'auto', display: 'block', objectFit: 'contain' }}
@@ -156,13 +156,13 @@ export default function Navbar() {
               href={getWhatsAppUrl()} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="dock-action-icon-btn whatsapp-dock-btn retro-wa-btn"
+              className="dock-action-icon-btn whatsapp-dock-btn retro-wa-btn desktop-only"
               title="Chat on WhatsApp"
             >
               <MessageCircle size={18} />
             </a>
 
-            <Link to="/get-a-quote/" className="dock-cta-btn retro-cta-btn">
+            <Link to="/get-a-quote/" className="dock-cta-btn retro-cta-btn desktop-only">
               <span>GET QUOTE</span>
               <ArrowRight size={14} />
             </Link>

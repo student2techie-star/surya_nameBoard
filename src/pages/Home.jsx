@@ -82,7 +82,7 @@ export default function Home() {
             <div className="hero-image-block">
               <div className="hero-image-card">
                 <ImagePlaceholder
-                  src="/images/surya-designs-custom-signage-thiruvananthapuram.webp"
+                  src={`${import.meta.env.BASE_URL}images/surya-designs-custom-signage-thiruvananthapuram.webp`}
                   alt="Custom illuminated house name board Mizhi by Surya Designs"
                   title="Illuminated House Name Board — Mizhi Villa Project"
                   objectFit="cover"
@@ -113,7 +113,7 @@ export default function Home() {
               <div key={service.id} className="service-card">
                 <div className="service-card-image">
                   <ImagePlaceholder
-                    src={`/images/${service.imageFileName}`}
+                    src={`${import.meta.env.BASE_URL}images/${service.imageFileName}`}
                     alt={service.name}
                     title={service.imagePlaceholder}
                     aspectRatio="4/3"
@@ -162,7 +162,7 @@ export default function Home() {
 
             <div className="about-visual">
               <ImagePlaceholder
-                src="/images/surya-designs-about-workshop.webp"
+                src={`${import.meta.env.BASE_URL}images/surya-designs-about-workshop.webp`}
                 alt="Surya Designs Signage Workshop Thiruvananthapuram"
                 title="Surya Designs Workshop & Crafting Facility"
                 aspectRatio="4/3"
@@ -242,7 +242,7 @@ export default function Home() {
             {GALLERY_ITEMS.slice(0, 6).map((item) => (
               <div key={item.id} className="work-preview-card">
                 <ImagePlaceholder
-                  src={`/images/${item.image}`}
+                  src={`${import.meta.env.BASE_URL}images/${item.image}`}
                   alt={item.title}
                   title={item.placeholderTitle}
                   aspectRatio="4/3"

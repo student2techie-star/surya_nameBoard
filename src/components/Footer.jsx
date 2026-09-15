@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="footer-col brand-col">
             <Link to="/" className="footer-brand" title="Surya Designs Home">
               <img 
-                src="/surya-designs-logo.png" 
+                src={`${import.meta.env.BASE_URL}surya-designs-logo.png`} 
                 alt="Surya Designs Logo" 
                 className="footer-logo-img"
                 style={{ height: '44px', width: 'auto', display: 'block', objectFit: 'contain' }}

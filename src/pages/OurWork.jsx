@@ -36,7 +36,7 @@ export default function OurWork() {
               <div key={proj.id} className={`project-case-card ${idx % 2 !== 0 ? 'project-reverse' : ''}`}>
                 <div className="project-case-image">
                   <ImagePlaceholder
-                    src={`/images/${proj.image}`}
+                    src={`${import.meta.env.BASE_URL}images/${proj.image}`}
                     alt={proj.title}
                     title={proj.placeholderTitle}
                     aspectRatio="16/10"

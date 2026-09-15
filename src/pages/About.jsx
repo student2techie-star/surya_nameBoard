@@ -45,7 +45,7 @@ export default function About() {
 
             <div className="about-visual">
               <ImagePlaceholder
-                src="/images/surya-designs-about-workshop.webp"
+                src={`${import.meta.env.BASE_URL}images/surya-designs-about-workshop.webp`}
                 alt="Surya Designs Workshop Thiruvananthapuram"
                 title="Surya Designs Workshop & Production Area"
                 aspectRatio="4/3"

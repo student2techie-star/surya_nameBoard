@@ -70,7 +70,7 @@ export default function Gallery() {
                   {/* Removed Floating Category Badge */}
 
                   <ImagePlaceholder
-                    src={`/images/${item.image}`}
+                    src={`${import.meta.env.BASE_URL}images/${item.image}`}
                     alt={item.title}
                     title={item.placeholderTitle}
                     objectFit="cover"
@@ -94,7 +94,7 @@ export default function Gallery() {
             </button>
             <div className="lightbox-media">
               <ImagePlaceholder
-                src={`/images/${selectedItem.image}`}
+                src={`${import.meta.env.BASE_URL}images/${selectedItem.image}`}
                 alt={selectedItem.title}
                 title={selectedItem.placeholderTitle}
                 aspectRatio="16/10"

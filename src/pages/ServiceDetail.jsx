@@ -64,7 +64,7 @@ export default function ServiceDetail() {
             <div className="service-detail-main">
               <div className="service-hero-image margin-bottom-lg">
                 <ImagePlaceholder
-                  src={`/images/${service.imageFileName}`}
+                  src={`${import.meta.env.BASE_URL}images/${service.imageFileName}`}
                   alt={service.name}
                   title={service.imagePlaceholder}
                   aspectRatio="16/9"
@@ -87,7 +87,7 @@ export default function ServiceDetail() {
                     {relatedGallery.map((item) => (
                       <div key={item.id} className="work-preview-card">
                         <ImagePlaceholder
-                          src={`/images/${item.image}`}
+                          src={`${import.meta.env.BASE_URL}images/${item.image}`}
                           alt={item.title}
                           title={item.placeholderTitle}
                           aspectRatio="4/3"

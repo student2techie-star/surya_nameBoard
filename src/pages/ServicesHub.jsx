@@ -36,7 +36,7 @@ export default function ServicesHub() {
               <div key={service.id} className="service-card">
                 <div className="service-card-image">
                   <ImagePlaceholder
-                    src={`/images/${service.imageFileName}`}
+                    src={`${import.meta.env.BASE_URL}images/${service.imageFileName}`}
                     alt={service.name}
                     title={service.imagePlaceholder}
                     aspectRatio="4/3"
